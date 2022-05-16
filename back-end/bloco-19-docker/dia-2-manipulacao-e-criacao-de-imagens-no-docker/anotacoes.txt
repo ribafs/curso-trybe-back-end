@@ -1,0 +1,16 @@
+*** DIA 19.2 - Docker: Utilizando Containers ***
+
+
+COMANDO				AÇÃO/FUNÇÃO
+docker images				lista todas as imagens baixadas localmente
+docker ps -a				lista os containers que foram criados a partir de alguma imagem
+docker rmi -f <IMAGE ID>		remove a imagem pela image ID
+docker pull <imagem>			baixa uma imagem do docker, mas não cria um container
+docker run -it <imagem>		acessa uma imagem no modo interativo
+docker run --name <nome> -it <imagem>	acessa uma imagem no modo interativo e com o nome que for escolhido
+docker start -ai <nome_container>	inicia o container com 'attach' de modo interativo
+docker stop <nome_container>		interronpe o funcionamento do container
+docker run -d -P --name <nome_container> <imagem>	cria um container como nome desejado(A atribuição aleatória das portas é feita pela flag -P)
+docker run -d -p 54321:80 httpd:2.4	cria um container com uma porta específica (-p <PORTA-SO-HOSPEDEIRO>:<PORTA-SO-CONVIDADO> )
+docker start <nome_container>		inicia/reinicia um container
+
