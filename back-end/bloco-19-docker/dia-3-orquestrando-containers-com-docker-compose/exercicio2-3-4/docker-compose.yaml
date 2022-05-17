@@ -1,0 +1,29 @@
+version: '3'
+services:
+  ghost: 
+    depends_on:
+      ghost-db:
+        condition: service_healthy
+    image: ghost:1-alpine
+    ports:
+      - 2368:2368
+    environment:
+      database__client: mysql
+      database__connection__database: ghost
+      database__connection__host: ghost-db
+      database__connection__user: root
+      database__connection__password: 1234
+  ghost-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    healthcheck:
+    test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+    timeout: 20s
+    retries: 10
+
+networks:
+  my-network:
+
+volumes:
+  db_data:
