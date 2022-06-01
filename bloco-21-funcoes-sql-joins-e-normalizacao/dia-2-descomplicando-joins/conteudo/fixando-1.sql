@@ -34,7 +34,8 @@ FROM sakila.address AS ad
 INNER JOIN sakila.customer AS cus
 ON ad.address_id = cus.address_id
 WHERE cus.active IS TRUE
-GROUP BY cus.first_name;
+GROUP BY cus.first_name
+ORDER BY cus.first_name;
 
 SELECT * FROM sakila.payment;
 
