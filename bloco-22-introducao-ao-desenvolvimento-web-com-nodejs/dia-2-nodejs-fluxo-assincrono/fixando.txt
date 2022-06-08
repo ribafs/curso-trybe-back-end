@@ -1,0 +1,6 @@
+Reflita e conceitue com suas próprias palavras:
+qual a diferença de lidar com o fluxo assíncrono com callback em relação a Promises?
+
+as callbacks são usadas em processos e funções mais simples.
+as promises são usadas em funções mais complexas onde o retorno de um processo tem que ser usado em um novo processo.
+Tornando assim, o código mais limpo e fácil de entender.
