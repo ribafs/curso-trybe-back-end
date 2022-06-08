@@ -1,8 +1,8 @@
 {
-  "name": "io-local",
+  "name": "exercicio",
   "version": "1.0.0",
-  "description": "Conteúdo do dia 22.2: Node.js - Fluxo Assíncrono",
-  "main": "index.js",
+  "description": "Exercícios do dia 22.2: Node.js - Fluxo Assíncrono",
+  "main": "exercicio-1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
