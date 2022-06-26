@@ -1,0 +1,37 @@
+cria o diretório do projeto
+entre no diretório criado
+npm init -y
+npm i mysql2
+npm i express body-parser
+npm i nodemon -D
+cria o .gitignore, já incluindo a pasta node_modules/
+cria o arquivo index.js com o seguinte código
+
+---
+const express = require('express');
+
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+	console.log(`Ouvindo a porta ${PORT}`);
+});
+---
+
+no arquivo package.json, adicionar o "dev": "nodemon index.js" no script,
+cria o diretório models
+entre no diretório models
+cria o arquivo connection.js com o seguinte código
+
+---
+const mysql = require('mysql2/promise');
+
+const connection = mysql.createPool({
+	host: 'localhost', 
+	user: 'root',
+	password: 'senha123', // password: '' caso o usuário não tenha senha
+	database: 'model_example' });
+
+module.exports = connection;
+---
