@@ -1,0 +1,92 @@
+1 - dentro da pasta do projeto, no terminal: npm init -y
+2 - npm add express mysql2
+3 - criar .gitignore e add a pasta node_modules/
+4 - npm add -D @types/express @types/node nodemon eslint eslint-config-trybe-backend
+5 - .eslintrc.json com o seguinte código: 
+---
+{
+  "extends": "trybe-backend"
+}
+---
+6 - criar o arquivo src/index.js
+7 - criar o arquivo .vscode/settings.json com o código:
+---
+{
+  // quando salvar, formata
+  "editor.formatOnSave": true,
+  // força indentar com 2 espaços
+  "editor.detectIndentation": false,
+  // indenta com 2 espaços
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    // força o eslint a formatar sempre
+    "source.fixAll.eslint": true
+  }
+}---
+8 - modifica o package.json:
+---
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+---
+9 - criar o arquivo .vscode/launch.json:
+---
+{
+  "configurations": [    
+    {
+      "name": "start",
+      "request": "launch",
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "runtimeExecutable": "npm",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    }
+  ]
+}
+---
+10 - add no index.js: 
+---
+const express = require('express');
+
+const app = express();
+
+app.use(express.json());
+
+app.listen(3000, () => console.log('Rodando na porta 3000'));
+---
+
+11 - começar o projeto
+
+
+
+**** fazendo a parte do MySQL ****
+1 - para rodar o projeto em docker, colocar o seguinte comando no terminal:
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5
+
+Caso for usar o MySQL localmente sem o docker, basta conectar o Workbench normalmente.
+2 - criar o banco de dados, as tabelas e tudo mais que for necessário
+3 - criar o arquivo models/connections.js:
+---
+const mysql = require('mysql2/promise');
+
+// cria uma pool de conexões com o bd
+const connection = mysql.createPool({
+  user: 'trybe', // usuário que será usado para conexão
+  password: 'Trybe@123', // senha do usuário
+  host: 'localhost', // local do usuário
+  database: 'model_example' // nome do BD
+});
+
+module.exports = connection;
+---
+
+
+DICAS:
+- THUNDER-CLIENT: se quiser salvar as requisiçoes feitas pelo Thunder-Client dentro da pasta do meu projeto, basta adicionar o seguinte comando em .vscode/settings.json:
+  "thunder-client.saveToWorkspace": true
+  depois em collections, basta criar uma pasta com o nome do projeto
