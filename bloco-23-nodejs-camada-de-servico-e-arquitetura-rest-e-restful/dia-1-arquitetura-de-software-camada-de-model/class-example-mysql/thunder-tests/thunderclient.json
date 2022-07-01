@@ -4,11 +4,11 @@
     "colId": "5bcf02c9-60c5-44de-a6d4-39b4ac4c8f0d",
     "containerId": "",
     "name": "get 1 movie",
-    "url": "localhost:3001/movies/3",
+    "url": "localhost:3001/movies/7",
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-06-29T00:42:13.931Z",
-    "modified": "2022-06-30T22:14:24.552Z",
+    "modified": "2022-07-01T01:13:33.210Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -36,12 +36,12 @@
     "method": "POST",
     "sortNum": 40000,
     "created": "2022-06-30T22:05:09.049Z",
-    "modified": "2022-06-30T22:10:07.423Z",
+    "modified": "2022-07-01T01:12:11.242Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"Toy Story 3\",\n    \"year\": 2021\n}",
+      "raw": "{\n    \"name\": \"Toy Story\",\n    \"year\": 8888\n}",
       "form": []
     },
     "tests": []
@@ -51,11 +51,11 @@
     "colId": "5bcf02c9-60c5-44de-a6d4-39b4ac4c8f0d",
     "containerId": "",
     "name": "remove 1 movie",
-    "url": "localhost:3001/movies/3",
+    "url": "localhost:3001/movies/7",
     "method": "DELETE",
     "sortNum": 50000,
     "created": "2022-06-30T22:13:52.145Z",
-    "modified": "2022-06-30T22:14:09.954Z",
+    "modified": "2022-07-01T01:23:10.696Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -69,7 +69,7 @@
     "method": "PUT",
     "sortNum": 60000,
     "created": "2022-06-30T22:21:18.824Z",
-    "modified": "2022-06-30T22:22:31.285Z",
+    "modified": "2022-07-01T00:35:46.821Z",
     "headers": [],
     "params": [],
     "body": {
