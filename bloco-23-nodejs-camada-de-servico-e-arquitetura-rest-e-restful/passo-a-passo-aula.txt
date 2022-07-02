@@ -84,6 +84,10 @@ const connection = mysql.createPool({
 
 module.exports = connection;
 ---
+4 - add no index.js:
+---
+const connection = require('./connections');
+---
 
 
 DICAS:
