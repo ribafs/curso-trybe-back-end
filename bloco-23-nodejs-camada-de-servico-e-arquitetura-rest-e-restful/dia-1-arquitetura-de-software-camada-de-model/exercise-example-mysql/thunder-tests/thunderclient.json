@@ -55,12 +55,12 @@
     "method": "PUT",
     "sortNum": 40000,
     "created": "2022-07-01T21:27:59.952Z",
-    "modified": "2022-07-01T21:29:04.714Z",
+    "modified": "2022-07-03T17:31:09.485Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"lastName\": \"Neto\",\n    \"email\": \"calebe.neto@gmail.com\"\n}\n",
+      "raw": "  {\n    \"firstName\": \"Galileo\",\n    \"lastName\": \"Neto\",\n    \"email\": \"galileo.neto@gmail.com\",\n    \"password\": \"d496d5ea2442\"\n}\n",
       "form": []
     },
     "tests": []

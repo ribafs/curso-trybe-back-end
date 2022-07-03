@@ -1,5 +1,8 @@
 const express = require('express');
 const validData = require('../middlewares/dataValidation');
+const validEmail = require('../middlewares/emailValidation');
+const validFirstName = require('../middlewares/firstNameValidation');
+const validLastName = require('../middlewares/lastNameValidation');
 const validPass = require('../middlewares/passValidation');
 const users = require('../models/users');
 
@@ -20,8 +23,8 @@ app.listen(3000, () => console.log('Rodando na porta 3000'));
   }
 */
 
-// put /user:id
-app.put('/user/:id', async (req, res) => {
+// edit /user:id
+app.put('/user/:id', validFirstName, validLastName, validEmail, validPass, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;
@@ -35,13 +38,13 @@ app.put('/user/:id', async (req, res) => {
     const newUser = await users.getUser(id);
     if (!newUser) return res.status(404).json(NAO_ENCONTRADO);
 
-    res.json(newUser);
+    res.status(200).json(newUser);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });
 
-// post /user
+// add /user
 app.post('/user', validData, validPass, async (req, res) => {
   try {
     const userData = req.body;
@@ -53,7 +56,7 @@ app.post('/user', validData, validPass, async (req, res) => {
   }
 });
 
-// get /user/:id
+// getOne /user/:id
 app.get('/user/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -65,7 +68,7 @@ app.get('/user/:id', async (req, res) => {
   }
 });
 
-// get /user
+// getAll /user
 app.get('/user', async (_req, res) => {
   try {
     const user = await users.getUser();
