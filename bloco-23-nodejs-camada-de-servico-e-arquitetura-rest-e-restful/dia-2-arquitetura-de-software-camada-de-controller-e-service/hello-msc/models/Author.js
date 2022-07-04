@@ -3,10 +3,10 @@ const connection = require('./connection');
 // Cria uma string com o nome completo da pessoa autora
 const getNewAuthor = (authorData) => {
   const { id, firstName, middleName, lastName } = authorData;
-
+  
   const fullName = [firstName, middleName, lastName]
-    .filter((name) => name)
-    .join(' ');
+  .filter((name) => name)
+  .join(' ');
   
   return {
     id,
@@ -14,8 +14,8 @@ const getNewAuthor = (authorData) => {
     middleName,
     lastName,
     name: fullName,
-  }
-}
+  };
+};
 
 // Converte o nome dos campos de snake_case para camelCase
 const serialize = (authorData) => authorData.map((item) => getNewAuthor({
@@ -25,20 +25,39 @@ const serialize = (authorData) => authorData.map((item) => getNewAuthor({
   lastName: item.last_name,
 }));
 
+const findByName = async (firstName, middleName, lastName) => {
+  let query = 'SELECT * FROM model_example.authors';
+
+  if (middleName) {
+    query += 'WHERE first_name = ? AND middle_name = ? AND last_name = ?;';
+  } else {
+    query += 'WHERE first_name = ? AND last_name = ?;';
+  }
+
+  const params = middleName ? [firstName, middleName, lastName] : [firstName, lastName];
+
+  const [authorData] = await connection.execute(query, params);
+
+  if (authorData.length === 0) return null;
+
+  return serialize(authorData);
+};
+
 // Busca todos os autores do banco.
 const getAll = async () => {
+  console.log('getAll no Model');
   const [authors] = await connection.execute(
     'SELECT * FROM model_example.authors;',
   );
   return serialize(authors);
-}
+};
 
 /*
   Busca uma pessoa autora específica, a partir do seu ID
   @param {String} id ID da pessoa autora a ser recuperado
 */
 const findById = async (id) => {
-  const query = `SELECT * FROM model_example.authors WHERE id = ?;`;
+  const query = 'SELECT * FROM model_example.authors WHERE id = ?;';
 
   const [authorData] = await connection.execute(query, [id]);
 
@@ -60,4 +79,5 @@ module.exports = {
   getAll,
   findById,
   createAuthor,
+  findByName,
 };
