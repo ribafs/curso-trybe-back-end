@@ -21,7 +21,7 @@ const createAuthor = async (firstName, middleName, lastName) => {
   if (existingAuthor) {
     return {
       error: {
-        code: 'alreadyExistis',
+        code: 'alreadyExists',
         message: 'Uma pessoa autora já existe com esse nome completo',
       },
     };
