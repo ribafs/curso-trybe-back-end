@@ -1,0 +1,26 @@
+{
+  "name": "hello-msc",
+  "version": "1.0.0",
+  "description": "Controller and service model from course Trybe",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Tryber - Sheila Nakashima",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "express-rescue": "^1.1.31",
+    "joi": "^17.6.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "nodemon": "^2.0.18"
+  }
+}

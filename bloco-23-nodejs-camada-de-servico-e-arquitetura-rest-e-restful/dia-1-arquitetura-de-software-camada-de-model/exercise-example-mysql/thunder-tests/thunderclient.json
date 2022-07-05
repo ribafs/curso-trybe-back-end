@@ -8,12 +8,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-07-01T16:49:38.940Z",
-    "modified": "2022-07-01T20:26:12.266Z",
+    "modified": "2022-07-03T23:02:41.699Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n\t\"firstName\": \"Sandy\",\n\t\"lastName\": \"Junior\",\n\t\"email\": \"sandy.junior@gmail.com\",\n\t\"password\": \"d496d5ea2443\"\n}",
+      "raw": "{\n\t\"firstName\": \"Lucas\",\n\t\"lastName\": \"Cardoso\",\n\t\"email\": \"lucas.cardoso@gmail.com\"\n}",
       "form": []
     },
     "tests": []
@@ -27,7 +27,7 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-07-01T20:38:40.214Z",
-    "modified": "2022-07-01T20:43:44.480Z",
+    "modified": "2022-07-03T23:04:18.269Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -51,16 +51,16 @@
     "colId": "20b0a582-5451-42ec-aaff-be3db2a34c00",
     "containerId": "",
     "name": "editUser",
-    "url": "localhost:3000/user/1",
+    "url": "localhost:3000/user/3",
     "method": "PUT",
     "sortNum": 40000,
     "created": "2022-07-01T21:27:59.952Z",
-    "modified": "2022-07-03T17:31:09.485Z",
+    "modified": "2022-07-03T23:03:56.909Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"firstName\": \"Galileo\",\n    \"lastName\": \"Neto\",\n    \"email\": \"galileo.neto@gmail.com\",\n    \"password\": \"d496d5ea2442\"\n}\n",
+      "raw": "  {\n    \"firstName\": \"Lucas\",\n    \"lastName\": \"Arantes\",\n    \"email\": \"lucas.arantes@gmail.com\",\n    \"password\": \"d496d5ea2442\"\n}\n",
       "form": []
     },
     "tests": []

@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "0c65bbbc-d1da-4dcb-ad5f-37b335e72ace",
+    "colName": "class-example-msc",
+    "created": "2022-07-05T04:34:35.732Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "592270e2-d463-4dda-9389-2872332bdf6a",
+        "name": "user",
+        "containerId": "",
+        "created": "2022-07-05T04:35:53.280Z",
+        "sortNum": 10000
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "7684d5f6-47ba-4e65-b607-bf4a1ee2c957",
+    "colId": "3f3d57af-2354-4200-84d5-e61218b722ea",
+    "containerId": "",
+    "name": "getAll",
+    "url": "localhost:3000/authors",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-07-04T11:30:45.671Z",
+    "modified": "2022-07-04T11:31:33.890Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

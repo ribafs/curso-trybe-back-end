@@ -1,0 +1,96 @@
+[
+  {
+    "_id": "7095adb8-5868-43e6-a41c-9e702f66b3f5",
+    "colId": "f7accf9d-d5a1-4adb-b52c-37140927e27e",
+    "containerId": "",
+    "name": "getAll authors",
+    "url": "localhost:3000/authors",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-07-04T13:49:14.815Z",
+    "modified": "2022-07-04T13:49:24.164Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "f079317d-b499-4515-adda-2d2b20d4b2bc",
+    "colId": "f7accf9d-d5a1-4adb-b52c-37140927e27e",
+    "containerId": "",
+    "name": "getOne author",
+    "url": "localhost:3000/authors/3",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-07-04T14:34:09.902Z",
+    "modified": "2022-07-04T19:47:25.268Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "5962e1af-2321-4b89-bfd1-9e1aa94741df",
+    "colId": "f7accf9d-d5a1-4adb-b52c-37140927e27e",
+    "containerId": "",
+    "name": "create author",
+    "url": "localhost:3000/authors",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-07-04T14:35:34.394Z",
+    "modified": "2022-07-04T19:48:03.445Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"firstName\": \"Lucas\",\n    \"middleName\": \"Cardoso\",\n    \"lastName\": \"Arantes\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "05c85ab8-952c-4ccb-a159-e4595355e322",
+    "colId": "f7accf9d-d5a1-4adb-b52c-37140927e27e",
+    "containerId": "",
+    "name": "getAll books",
+    "url": "localhost:3000/books",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-07-04T19:57:45.443Z",
+    "modified": "2022-07-04T19:58:10.411Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "d5b01d12-876b-4c86-a447-dd624eef9c4e",
+    "colId": "f7accf9d-d5a1-4adb-b52c-37140927e27e",
+    "containerId": "",
+    "name": "create book",
+    "url": "localhost:3000/books",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2022-07-04T20:44:27.755Z",
+    "modified": "2022-07-04T20:49:53.186Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"title\": \"A Cabana\",\n    \"authorId\": 6\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "4fd59ac1-48db-4273-8461-a1ca8c0587af",
+    "colId": "f7accf9d-d5a1-4adb-b52c-37140927e27e",
+    "containerId": "",
+    "name": "search book by author",
+    "url": "localhost:3000/books/6",
+    "method": "GET",
+    "sortNum": 70000,
+    "created": "2022-07-04T21:02:07.749Z",
+    "modified": "2022-07-04T21:07:31.696Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
