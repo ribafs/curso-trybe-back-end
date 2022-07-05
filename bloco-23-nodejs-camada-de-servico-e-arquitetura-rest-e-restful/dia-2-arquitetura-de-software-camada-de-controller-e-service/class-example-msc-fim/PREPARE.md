@@ -1,0 +1,1 @@
+- Para criar um banco de dados, rode o comando `npm run compose`

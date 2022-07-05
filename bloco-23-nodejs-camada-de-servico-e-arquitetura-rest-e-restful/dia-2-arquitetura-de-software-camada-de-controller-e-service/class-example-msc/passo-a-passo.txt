@@ -1,0 +1,69 @@
+npm init -y
+npm add express express-async-errors mysql2 joi
+src/index.js
+npm add -D eslint eslint-config-trybe-backend nodemon @types/node
+apagar o main, test do package.json
+acrescentar "start": "nodemon --watch src src/index.js"
+.eslintrc.json >> {
+  "extends": "trybe-backend"
+}
+.vscode/launch.json >> Add config >> Node.js: Launch via npm
+"name": "start" e "runtimeArgs": "start"
+.vscode/settings.json >> {
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint":true
+  }
+}
+.gitignore >> node_modules/
+index.js >> const express = require('express');
+require('express-async-errors');
+
+const app = express();
+app.use(express.json());
+
+app.use((err, _req, res, _next) => {
+  const { name } = err;
+  switch (name) {
+    default: console.warn(err); res.sendStatus(500);
+  }
+});
+
+app.listen(3000, () => console.log('Rodando na porta 3000'));
+db/migrations.sql >> drop database if exists db;
+create database db;
+use db;
+
+create table user(
+  id int not null auto_increment primary key,
+  name varchar(100) not null,
+  email varchar(100) not null,
+  created_at datetime(3) not null default now(3),
+  updated_at datetime(3) null on update now(3)
+);
+package.json:script >> "compose": "docker-compose down && docker-compose up -d"
+/docker-compose.yml >> version: '3'
+
+services:
+  mysql:
+    image: mysql:5
+    container_name: mysql
+    ports: [ "3306:3306" ]
+    volumes: [ "./db:docker-entrypoint-initdb.d" ]
+    environment: [ "MYSQL_ROOT_PASSWORD=root" ]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-proot"
+        ]
+      timeout: 10s
+      retries: 10
