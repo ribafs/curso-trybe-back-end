@@ -1,0 +1,32 @@
+*** CONFIGURANDO O SEQUELIZE ***
+
+na pasta do projeto:
+
+npm init -y
+npm install sequelize sequelize-cli mysql2 dotenv
+npx sequelize-cli init
+
+config/config.json: modificar em 'development' os dados do banco que será usado
+
+*se quiser usar as variáveis de ambientre, basta mudar o arquivo para .js e importar o dotenv
+
+npx sequelize db:create
+
+*mysql -u <usuário> -p -> abre o mysql e com o comando show databases; podemos verificar o banco de dados criado. Para ssair, basta escrever exit
+
+npx sequelize model:generate --name <NomeDoModel> --attributes <nomeDoAtributo>:string
+
+modifique o model criado no comando anterior
+adicione as modificações no migration criado
+
+npx sequelize db:migrate -> para aplicar as mudanças feitas
+npx sequelize db:migrate:undo -> para desfazer as mudanças feitas
+
+npx sequelize migration:generate --name add-column-phone-table-users -> adiciona colunas na tabela
+
+npx sequelize db:migrate
+
+npx sequelize seed:generate --name <NomeDoModel>
+
+npx sequelize db:seed:all -> cria os seeds
+npx sequelize db:seed:undo:all -> desfaz os seeds
