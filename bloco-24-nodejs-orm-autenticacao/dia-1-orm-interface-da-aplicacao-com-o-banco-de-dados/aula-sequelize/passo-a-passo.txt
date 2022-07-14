@@ -64,3 +64,11 @@ services:
 faz todas as modificações necessárias em migrations e models
 
 npx sequelize db:migrate
+
+npx sequelize seed:generate --name add-user
+
+faz todas as modificações necessárias em seeders
+
+npx sequelize db:seed:all
+
+cria os crontrollers e routes e services
