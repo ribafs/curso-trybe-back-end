@@ -3,7 +3,7 @@
 const bcrypt = require('bcrypt');
 
 module.exports = {
-    /** 
+   /** 
    * @param {import('sequelize').QueryInterface} queryInterface
    * @param {import('sequelize').Sequelize} queryInterface
    */

@@ -8,17 +8,7 @@ const attibutes = {
     primaryKey: true,
     type: DataTypes.INTEGER,
   },
-  email: {
-    type: DataTypes.STRING,
-  },
-  passwordHash: {
-    type: DataTypes.STRING,
-    field: 'password_hash',
-  },
   name: {
-    type: DataTypes.STRING,
-  },
-  phone: {
     type: DataTypes.STRING,
   },
   createdAt: {
@@ -35,11 +25,11 @@ const attibutes = {
 
 /** @param {import('sequelize').Sequelize} sequelize */
 module.exports = (sequelize) => {
-  const users = sequelize.define('users', attibutes, {
-    tableName: 'users',
+  const vets = sequelize.define('vets', attibutes, {
+    tableName: 'vets',
   });
-  users.associate = (models) => {
-    users.hasMany(models.pets, { key: 'userId', as: 'pets' });
+  vets.associate = (models) => {
+    // vets.hasMany(models.pets, { key: 'userId', as: 'pets' });
   };
-  return users;
+  return vets;
 };

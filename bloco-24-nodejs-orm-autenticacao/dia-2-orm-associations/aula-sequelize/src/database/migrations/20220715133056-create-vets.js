@@ -5,7 +5,7 @@ module.exports = {
    * @param {import('sequelize').Sequelize} queryInterface
    */
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('pets', {
+    await queryInterface.createTable('vets', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -14,15 +14,6 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING
-      },
-      userId: {
-        type: Sequelize.INTEGER,
-        allowNull:false,
-        field: 'user_id',
-        references: {
-          model: 'users',
-          key: 'id',
-        },
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +28,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('pets');
+    await queryInterface.dropTable('vets');
   }
 };

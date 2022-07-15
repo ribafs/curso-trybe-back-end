@@ -13,6 +13,14 @@ const usersController = {
     const user = await usersService.add(data);
     res.status(201).json(user);
   },
+
+  /** @type {import('express').RequestHandler} */
+  get: async (req, res) => {
+    const { id } = await usersService.paramsIdValidate(req.params);
+    const user = await usersService.getEager(id);
+    res.status(201).json(user);
+  },
+  
 };
 
 module.exports = usersController;
