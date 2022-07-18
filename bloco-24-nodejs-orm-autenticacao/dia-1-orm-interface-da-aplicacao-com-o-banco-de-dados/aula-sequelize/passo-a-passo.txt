@@ -1,0 +1,74 @@
+configurar o ambiente com express, node, nodemon, joi, mysql2, dotenv, eslint, sequilize e sequelize-cli
+
+.sequelizerc ---
+const path = require('path')
+
+module.exports = {
+  'config': path.resolve('src', 'database', 'config', 'config.js'),
+  'models-path': path.resolve('src', 'database', 'models'),
+  'seeders-path': path.resolve('src', 'database', 'seeders'),
+  'migrations-path': path.resolve('src', 'database', 'migrations'),
+}
+---
+npx sequelize-cli init
+.env ---
+MYSQL_USER=<user>
+MYSQL_PASSWORD=<pass>
+MYSQL_HOST=localhost
+MYSQL_DATABASE=<database>
+---
+package.json ---
+"scripts":
+  "start": "nodemon --watch src -r dotenv/config src/index.js",
+  "compose": "docker-compose down && docker-compose up -d"
+---
+config.js ---
+module.exports = {
+  development: {
+    username: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    host: process.env.MYSQL_HOST,
+    dialect: 'mysql',
+  },
+  test: {
+    username: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    host: process.env.MYSQL_HOST,
+    dialect: 'mysql',
+  },
+  production: {
+    username: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    host: process.env.MYSQL_HOST,
+    dialect: 'mysql',
+  },
+};
+---
+docker-compose.yml (somente se não for usar localmente) ---
+version: "3"
+
+services:
+  mysql:
+    image: mysql:5
+    platform: linux/amd64 // somente para quem usa mac
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
+---
+
+faz todas as modificações necessárias em migrations e models
+
+npx sequelize db:migrate
+
+npx sequelize seed:generate --name add-user
+
+faz todas as modificações necessárias em seeders
+
+npx sequelize db:seed:all
+
+cria os crontrollers e routes e services

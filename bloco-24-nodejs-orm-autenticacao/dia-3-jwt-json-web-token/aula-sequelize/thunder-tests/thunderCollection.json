@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "2d5e477e-3f58-49f7-9d3a-7c0d013d557a",
+    "colName": "aula-sequelize",
+    "created": "2022-07-14T22:34:44.035Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "05841a78-32ac-4822-a3f7-0cf8edde323d",
+        "name": "users",
+        "containerId": "",
+        "created": "2022-07-15T01:29:20.957Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "63a08f90-9a83-4590-b01d-cb07b7d7e05a",
+        "name": "pets",
+        "containerId": "",
+        "created": "2022-07-15T01:29:30.607Z",
+        "sortNum": 20000
+      },
+      {
+        "_id": "9d00978e-a69a-4b11-8e25-de21f22d091f",
+        "name": "attendance",
+        "containerId": "",
+        "created": "2022-07-15T19:42:27.148Z",
+        "sortNum": 30000
+      },
+      {
+        "_id": "70cdfdc7-6656-4ab5-a5e5-dac2070e406c",
+        "name": "vets",
+        "containerId": "",
+        "created": "2022-07-15T21:14:06.495Z",
+        "sortNum": 40000
+      },
+      {
+        "_id": "c3b73e74-4499-4b90-9def-a68ba8493f3f",
+        "name": "auth",
+        "containerId": "",
+        "created": "2022-07-16T14:55:43.002Z",
+        "sortNum": 50000
+      },
+      {
+        "_id": "d10f0efd-a67d-4456-ab41-20e05681d58b",
+        "name": "my",
+        "containerId": "",
+        "created": "2022-07-18T11:45:13.078Z",
+        "sortNum": 60000
+      }
+    ]
+  }
+]
