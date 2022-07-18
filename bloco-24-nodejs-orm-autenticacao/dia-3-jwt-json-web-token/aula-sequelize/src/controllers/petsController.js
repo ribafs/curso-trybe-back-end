@@ -14,6 +14,11 @@ const petsController = {
     const pet = await petsService.getLazy(id);
     res.status(200).json(pet);
   },
+
+  list: async (_req, res) => {
+    const pets = await petsService.list();
+    res.status(200).json(pets);
+  },
   
 };
 

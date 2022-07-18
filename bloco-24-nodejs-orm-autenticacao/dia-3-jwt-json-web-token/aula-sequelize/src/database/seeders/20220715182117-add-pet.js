@@ -20,6 +20,18 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date(),
       },
+      {
+        user_id: 2,
+        name: 'Panqueka',
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
+      {
+        user_id: 3,
+        name: 'Naerobi',
+        created_at: new Date(),
+        updated_at: new Date(),
+      },
     ], {});
   },
 

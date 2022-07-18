@@ -1,6 +1,7 @@
 const Joi = require('joi');
 const bcrypt = require('bcrypt');
 const models = require('../database/models');
+const { throwNotFoundError, unauthorized } = require('./utils');
 
 const usersService = {
   bodyAddValidate: async (obj) => {
@@ -14,6 +15,14 @@ const usersService = {
     return result;
   },
 
+  passVerify: async (pass, passHash) => {
+    try {
+      await bcrypt.compare(pass, passHash);
+    } catch (error) {
+      unauthorized('Invalid password');
+    }
+  },
+
   paramsIdValidate: async (obj) => {
     const schema = Joi.object({
       id: Joi.number().required().positive().integer(),
@@ -25,7 +34,7 @@ const usersService = {
   add: async (data) => {
     const modelWithHash = {
       ...data,
-      passwordHash: bcrypt.hash(data.passwordHash, 10),
+      passwordHash: await bcrypt.hash(data.passwordHash, 10),
     }; 
     const model = await models.users.create(modelWithHash);
     const newUser = model.toJSON();
@@ -67,6 +76,14 @@ const usersService = {
     return user;
   },
 
+  getByEmail: async (email) => {
+    const user = await models.users.findOne({
+      where: { email },
+      raw: true,
+    });
+    if (!user) throwNotFoundError('"user" not found');
+    return user;
+  },
 };
 
 module.exports = usersService;

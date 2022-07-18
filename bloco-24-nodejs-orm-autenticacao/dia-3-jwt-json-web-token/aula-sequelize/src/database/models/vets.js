@@ -28,8 +28,8 @@ module.exports = (sequelize) => {
   const vets = sequelize.define('vets', attibutes, {
     tableName: 'vets',
   });
-  vets.associate = (models) => {
-    // vets.hasMany(models.pets, { key: 'userId', as: 'pets' });
-  };
+  // vets.associate = (models) => {
+  //   // vets.hasMany(models.pets, { key: 'userId', as: 'pets' });
+  // };
   return vets;
 };

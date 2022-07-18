@@ -24,6 +24,11 @@ const petsService = {
     return model;
   },
 
+  list: async () => {
+    const pets = await models.pets.findAll({ raw: true });
+    return pets;
+  },
+
   getLazy: async (id) => {
     // fazendo o código usando raw
     const pet = await models.pets.findByPk(id, { raw: true });
@@ -34,6 +39,14 @@ const petsService = {
     });
     return pet;
   }, 
+
+  getByUserId: async (userId) => {
+    const pets = await models.pets.findAll({
+      where: { userId },
+      raw: true,
+    });
+    return pets;
+  },
 };
 
 module.exports = petsService;
