@@ -14,3 +14,6 @@ roda os arquivos em node: node .dist/<nomeDoArquivo>.js
 
 transpila automaticamente: npx tsc -w
 
+npm install mysql2 dotenv
+
+
