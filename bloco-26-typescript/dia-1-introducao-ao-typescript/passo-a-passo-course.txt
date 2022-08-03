@@ -16,4 +16,4 @@ transpila automaticamente: npx tsc -w
 
 npm install mysql2 dotenv
 
-
+npm i readline-sync @types/readline-sync
